@@ -1,0 +1,288 @@
+/** FONTS **/
+
+@font-face {
+	font-family: "LorimerCondensed";
+	src: url("./fonts/Lorimer_No_2_Condensed_Bold.otf") format("opentype");
+}
+@font-face {
+	font-family: "LorimerCondensedBlack";
+	src: url("./fonts/Lorimer_No_2_Condensed_Black.otf") format("opentype");
+}
+@font-face {
+	font-family: "Lorimer";
+	src: url("./fonts/Lorimer_No_2_Bold.otf") format("opentype");
+}
+@font-face {
+	font-family: "Parkinsans";
+	src: url("./fonts/Parkinsans-Light.ttf") format("truetype");
+	font-weight: 300;
+}
+@font-face {
+	font-family: "Parkinsans";
+	src: url("./fonts/Parkinsans-Regular.ttf") format("truetype");
+	font-weight: 400;
+}
+@font-face {
+	font-family: "Parkinsans";
+	src: url("./fonts/Parkinsans-Medium.ttf") format("truetype");
+	font-weight: 500;
+}
+@font-face {
+	font-family: "Parkinsans";
+	src: url("./fonts/Parkinsans-SemiBold.ttf") format("truetype");
+	font-weight: 600;
+}
+@font-face {
+	font-family: "Parkinsans";
+	src: url("./fonts/Parkinsans-Bold.ttf") format("truetype");
+	font-weight: 700;
+}
+@font-face {
+	font-family: "Parkinsans";
+	src: url("./fonts/Parkinsans-ExtraBold.ttf") format("truetype");
+	font-weight: 800;
+}
+
+body {
+  font-family: 'Parkinsans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "LorimerCondensed", sans-serif;
+	text-transform: uppercase;
+}
+
+/** COLORS **/
+
+.text-red {
+  color: #e30033;
+}
+
+.text-maroon {
+  color: #490320;
+}
+
+.text-rebeige-100 {
+  color: #FFFCF8;
+}
+
+.text-white {
+  color: white;
+}
+
+.bg-red {
+  background-color: #e30033;
+}
+
+.bg-maroon {
+  background-color: #490320;
+}
+
+.bg-beige-500 {
+  background-color: #fcefd9;
+}
+
+.bg-yellow {
+  background-color: #f7cb73;
+}
+
+.bg-pink {
+  background-color: #F5C8FA;
+}
+
+.bg-orange {
+  background-color: #F49058;
+}
+
+.bg-green {
+  background-color: #79CCA8;
+}
+
+.small-maroon-shadow {
+	border: 2px solid #490320;
+	box-shadow: 6px 7px 0px 0px #490320;
+	border-radius: 10px;
+}
+
+/** GENERAL **/
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.red-button {
+  padding: 12px 14px;
+  font-family: "Lorimer", sans-serif;
+	text-transform: uppercase;
+  background-color: #e30033;
+  color: #FFFCF8;
+  text-decoration: none;
+}
+
+/*.banner {
+  height: 75px;
+  z-index: 4;
+}*/
+
+header {
+  background-image: url("./img/bg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.my-rounded {
+  border-radius: 20px;
+}
+
+.my-big-rounded {
+  border-radius: 40px;
+}
+
+.my-rounded-bottom {
+  border-radius: 0 0 16px 16px;
+}
+
+.pill-button {
+  display: inline-block;
+  border-radius: 100px;
+  text-decoration: none;
+}
+
+.card-shadow {
+  box-shadow: 0px 4px 16.100000381469727px 0px rgba(0, 0, 0, 0.25);
+}
+
+.popular {
+  position: relative;
+}
+
+.popular::before {
+  content: "";
+  position: absolute;
+  top: -14px;
+  left: 0;
+  width: 100%;
+  height: 14px;
+  background-image: url(./img/triangle.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.popular::after {
+  content: "Montant pl\0000E9biscit\0000E9  par nos donateur·ices";
+  position: absolute;
+  top: -52px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  font-size: 14px;
+  color: #E9364B;
+  line-height: 1.1em;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.my-accordion-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  font-size: 1rem;
+  color: #E9364B;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 20px;
+  font-family: 'Open Sans', 'DM Sans', sans-serif;
+  text-align: left;
+  background-color: white;
+  border: 0;
+  overflow-anchor: none;
+}
+
+.my-accordion-button.collapsed {
+  color: rgba(233, 54, 75, 0.4);
+}
+
+@media (min-width: 768px) {
+
+  h1 {
+    font-size: 140px;
+    line-height: 118px;
+  }
+
+  header {
+    /*padding-top: 75px;*/
+    height: 100vh;
+  }
+
+  #slideshow div {
+    height: 100vh;
+  }
+
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 70px;
+    line-height: 56px;
+  }
+
+  #slideshow div {
+    height: 600px;
+  }
+}
+
+/* https://stackoverflow.com/questions/66768323/vertical-text-sliding-one-phrase-after-another */
+
+.slides span {
+  opacity: 0;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+}
+
+.slide-a {
+  animation: slideIn 12s forwards ease infinite;
+}
+.slide-b {
+  /* Start with 4 seconds delay */
+  animation: slideIn 12s 4s forwards ease infinite;
+}
+.slide-c {
+  /* Start with 8 seconds delay */
+  animation: slideIn 12s 8s forwards ease infinite;
+}
+
+
+@keyframes slideIn {
+  0% {
+      transform: translate3d(0, 50%, 0);
+      opacity: 0;
+  }
+  6.66% {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+  }
+  26.66% {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+  }
+  33.30% {
+      transform: translate3d(0, -50%, 0);
+      opacity: 0;
+  }
+  33.33% {
+      transform: translate3d(0, 50%, 0);
+      opacity: 0;
+  }
+  100% {
+      transform: translate3d(0, 50%, 0);
+      opacity: 0;
+  }
+}
