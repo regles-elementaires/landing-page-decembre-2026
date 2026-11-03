@@ -52,13 +52,17 @@ h1, h2, h3, h4, h5, h6 {
 	text-transform: uppercase;
 }
 
+.fs-14 {
+  font-size: 14px;
+}
+
 /** COLORS **/
 
-.text-red {
+.text-rered {
   color: #e30033;
 }
 
-.text-maroon {
+.text-remaroon {
   color: #490320;
 }
 
@@ -70,31 +74,31 @@ h1, h2, h3, h4, h5, h6 {
   color: white;
 }
 
-.bg-red {
+.bg-rered {
   background-color: #e30033;
 }
 
-.bg-maroon {
+.bg-remaroon {
   background-color: #490320;
 }
 
-.bg-beige-500 {
+.bg-rebeige-500 {
   background-color: #fcefd9;
 }
 
-.bg-yellow {
+.bg-reyellow {
   background-color: #f7cb73;
 }
 
-.bg-pink {
+.bg-repink {
   background-color: #F5C8FA;
 }
 
-.bg-orange {
+.bg-reorange {
   background-color: #F49058;
 }
 
-.bg-green {
+.bg-regreen {
   background-color: #79CCA8;
 }
 
@@ -123,27 +127,10 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
 }
 
-/*.banner {
-  height: 75px;
-  z-index: 4;
-}*/
-
 header {
   background-image: url("./img/bg.jpg");
   background-size: cover;
   background-position: center;
-}
-
-.my-rounded {
-  border-radius: 20px;
-}
-
-.my-big-rounded {
-  border-radius: 40px;
-}
-
-.my-rounded-bottom {
-  border-radius: 0 0 16px 16px;
 }
 
 .pill-button {
@@ -161,30 +148,17 @@ header {
 }
 
 .popular::before {
-  content: "";
+  content: "Montant plébiscité par nos donateur·ices";
+  font-size: 0;
   position: absolute;
-  top: -14px;
+  top: -34px;
   left: 0;
   width: 100%;
-  height: 14px;
-  background-image: url(./img/triangle.svg);
+  height: 50px;
+  background-image: url(./img/popular.svg);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-}
-
-.popular::after {
-  content: "Montant pl\0000E9biscit\0000E9  par nos donateur·ices";
-  position: absolute;
-  top: -52px;
-  left: 0;
-  width: 100%;
-  height: auto;
-  font-size: 14px;
-  color: #E9364B;
-  line-height: 1.1em;
-  padding: 0 20px;
-  text-align: center;
 }
 
 .my-accordion-button {
@@ -216,6 +190,15 @@ header {
     line-height: 118px;
   }
 
+  h2 {
+    font-size: 80px;
+    line-height: 80px;
+  }
+
+  h3 {
+    font-size: 40px;
+  }
+
   header {
     /*padding-top: 75px;*/
     height: 100vh;
@@ -231,6 +214,15 @@ header {
   h1 {
     font-size: 70px;
     line-height: 56px;
+  }
+
+  h2 {
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  h3 {
+    font-size: 28px;
   }
 
   #slideshow div {
@@ -285,4 +277,93 @@ header {
       transform: translate3d(0, 50%, 0);
       opacity: 0;
   }
+}
+
+/* BANNER */
+
+.banner {
+  display: flex;
+  white-space: nowrap;
+  padding: 10px 0;
+  position: absolute;
+  left: -10px;
+  width: 105%;
+}
+
+.rotate-2 {
+  transform: rotate(2deg);
+}
+
+.list {
+  display: flex;
+  align-items: top;
+  -webkit-animation: loop 10s infinite linear;
+  animation: loop 10s infinite linear;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+}
+
+.item-txt{
+  font-family: "LorimerCondensed", sans-serif;
+	text-transform: uppercase;
+  font-size: 60px;
+  line-height: 60px;
+  margin-left: 20px;
+}
+
+@media (max-width: 768px) {
+  .item-txt{
+    font-size: 40px;
+    line-height: 40px;
+  }
+}
+
+.item-goutte{
+  display: inline-block;
+  margin-left: 30px;
+  margin-right: 10px;
+}
+
+@keyframes loop {
+  100% {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+
+/* Chart */
+.don-chart{max-width:948px;margin:0 auto;
+  --dark:#400a1e; --pink:#f4c2f8; --red:#dd2232;
+  --stagger:.18s; --ease:cubic-bezier(.22,1,.36,1);}
+.don-chart svg{display:block;width:100%;height:auto;overflow:visible}
+.don-chart text{font-family: "LorimerCondensed", sans-serif;text-transform:uppercase}
+.don-chart .t-left{fill:var(--dark);text-anchor:middle}
+.don-chart .t-right{fill:var(--red)}
+.don-chart .t-lbl{font-size:23px}
+.don-chart .t-val{font-size:50px}
+.don-chart .bar-dark{fill:var(--dark)}
+.don-chart .bar-pink{fill:var(--pink)}
+
+/* État initial (avant animation) */
+.don-chart.js-anim rect{transform-box:fill-box}
+.don-chart.js-anim .bar-dark{transform:scaleX(0);transform-origin:left center}
+.don-chart.js-anim .bar-pink{transform:scaleX(0);transform-origin:right center}
+.don-chart.js-anim text{opacity:0;transform:translateY(10px)}
+
+/* Animation déclenchée quand le graphique entre à l'écran */
+.don-chart.is-visible .row-chart{--d:calc(var(--i) * var(--stagger))}
+.don-chart.is-visible .t-left{animation:dc-fade .5s var(--ease) var(--d) forwards}
+.don-chart.is-visible .t-left.t-val{animation-delay:calc(var(--d) + .08s)}
+.don-chart.is-visible .bar-dark{animation:dc-grow .75s var(--ease) calc(var(--d) + .1s) forwards}
+.don-chart.is-visible .bar-pink{animation:dc-grow .65s var(--ease) calc(var(--d) + .85s) forwards}
+.don-chart.is-visible .t-right{animation:dc-fade .45s var(--ease) calc(var(--d) + 1.15s) forwards}
+.don-chart.is-visible .t-right.t-val{animation-delay:calc(var(--d) + 1.22s)}
+@keyframes dc-grow{to{transform:scaleX(1)}}
+@keyframes dc-fade{to{opacity:1;transform:none}}
+
+@media (prefers-reduced-motion:reduce){
+  .don-chart.js-anim rect,.don-chart.js-anim text{animation:none!important;transform:none!important;opacity:1!important}
 }
