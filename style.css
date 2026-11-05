@@ -158,16 +158,6 @@ header {
   }
 }
 
-.pill-button {
-  display: inline-block;
-  border-radius: 100px;
-  text-decoration: none;
-}
-
-.card-shadow {
-  box-shadow: 0px 4px 16.100000381469727px 0px rgba(0, 0, 0, 0.25);
-}
-
 .popular {
   position: relative;
 }
@@ -184,28 +174,6 @@ header {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-}
-
-.my-accordion-button {
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  padding: 0;
-  font-size: 1rem;
-  color: #E9364B;
-  text-transform: uppercase;
-  font-weight: 800;
-  font-size: 20px;
-  font-family: 'Open Sans', 'DM Sans', sans-serif;
-  text-align: left;
-  background-color: white;
-  border: 0;
-  overflow-anchor: none;
-}
-
-.my-accordion-button.collapsed {
-  color: rgba(233, 54, 75, 0.4);
 }
 
 @media (min-width: 768px) {
@@ -398,3 +366,141 @@ header {
 @media (prefers-reduced-motion:reduce){
   .don-chart.js-anim rect,.don-chart.js-anim text{animation:none!important;transform:none!important;opacity:1!important}
 }
+
+/* ANIMATION PHRASES DROITS */
+:root {
+  --droit-duration: 750ms;      /* durée de la rotation */
+  --droit-ease: cubic-bezier(.77, 0, .18, 1);
+}
+
+/* Boîte qui contient le cube : sa largeur s'adapte en douceur
+    à chaque phrase, ce qui recentre l'ensemble sans à-coup */
+.droit__box {
+  position: relative;
+  height: 1.1em;
+  perspective: 600px;
+  perspective-origin: 50% 50%;
+  transition: width var(--droit-duration) var(--droit-ease);
+}
+
+.droit__cube {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transform: translateZ(-.55em);
+  transition: transform var(--droit-duration) var(--droit-ease);
+}
+.droit__cube.is-rotating { transform: translateZ(-.55em) rotateX(90deg); }
+.droit__cube.no-anim     { transition: none; }
+
+.droit__face {
+  position: absolute;
+  top: 0; left: 0;
+  height: 1.1em;
+  line-height: 1.1em;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: opacity var(--droit-duration) var(--droit-ease);
+}
+/* face avant (phrase actuelle) */
+.droit__face--front  { transform: translateZ(.55em); }
+/* face du dessous (phrase suivante) */
+.droit__face--bottom { transform: rotateX(-90deg) translateZ(.55em); opacity: .3; }
+
+/* léger effet d'ombre pendant la rotation pour accentuer le volume */
+.is-rotating .droit__face--front  { opacity: .2; }
+.is-rotating .droit__face--bottom { opacity: 1; }
+.no-anim .droit__face { transition: none; }
+
+/* règle invisible servant à mesurer la largeur des phrases */
+.droit__ruler {
+  width: 100%;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* texte lisible par les lecteurs d'écran */
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* ============================================================
+    MODE EMPILÉ (ajouté automatiquement par le JS quand la ligne
+    ne tient pas) : "J'ai le droit" au-dessus, phrase en dessous
+    ============================================================ */
+.droit.is-stacked {
+  flex-direction: column;
+  gap: .1em;
+}
+.droit.is-stacked .droit__box { width: 100% !important; transition: none; }
+.droit.is-stacked .droit__face { width: 100% !important; left: 50%; translate: -50% 0; }
+
+/* ============================================================
+    ACCESSIBILITÉ : pas de 3D si l'utilisateur réduit les animations
+    ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .droit__cube,
+  .droit__cube.is-rotating { transform: none; }
+  .droit__face--front,
+  .droit__face--bottom { transform: none; }
+  .droit__face--bottom { opacity: 0; }
+  .is-rotating .droit__face--front  { opacity: 0; }
+  .is-rotating .droit__face--bottom { opacity: 1; }
+  .droit__box { transition: none; }
+}
+
+/* BUTTON LIQUID ANIMATION */
+.button-liquid {
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  transition:color .3s ease .12s, border-color .3s ease;
+  display: inline-flex; 
+  align-items: center; 
+  text-decoration: none;
+}
+.button-liquid::before {
+  content:"";
+  position:absolute;
+  z-index:-1;
+  left:50%;
+  top:118%;
+  width:max(240%,240px);
+  aspect-ratio:1;
+  transform:translateX(-50%) rotate(0deg);
+  border-radius:43% 47% 44% 46%;
+  background:#FFFCF8;
+  transition:top .75s cubic-bezier(.25,.85,.3,1);
+  pointer-events:none;
+}
+.button-liquid:hover::before,.button-liquid:focus-visible::before {
+  top:-45%;
+  animation:liquid-wobble 3.4s linear infinite;
+}
+.button-liquid:hover,.button-liquid:focus-visible {
+  color:#490320 !important;
+}
+@keyframes liquid-wobble {
+  to {
+    transform:translateX(-50%) rotate(360deg);
+  }
+}
+
+/* REVEAL TEXT ANIM */
+/* Élément animé : invisible au départ */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+/* Classe ajoutée par JS quand l'élément entre dans le viewport */
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Délais progressifs pour un effet en cascade */
+.reveal:nth-child(2) { transition-delay: 1s; }
