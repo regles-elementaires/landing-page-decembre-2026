@@ -108,6 +108,12 @@ h1, h2, h3, h4, h5, h6 {
 	border-radius: 10px;
 }
 
+.small-red-shadow {
+	border: 2px solid #e30033;;
+	box-shadow: 6px 7px 0px 0px #e30033;;
+	border-radius: 10px;
+}
+
 /** GENERAL **/
 
 .w-full {
@@ -116,6 +122,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .h-full {
   height: 100%;
+}
+
+.my-rounded {
+  border-radius: 10px;
 }
 
 .red-button {
@@ -127,10 +137,25 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
 }
 
+.maroon-button {
+  padding: 12px 14px;
+  font-family: "Lorimer", sans-serif;
+	text-transform: uppercase;
+  background-color: #490320;
+  color: #FFFCF8;
+  text-decoration: none;
+}
+
 header {
   background-image: url("./img/bg.jpg");
   background-size: cover;
   background-position: center;
+}
+
+@media (min-width: 768px) {
+  .color-block {
+    min-height: 360px;
+  }
 }
 
 .pill-button {
@@ -292,6 +317,12 @@ header {
 
 .rotate-2 {
   transform: rotate(2deg);
+  margin-top: -24px;
+}
+
+.-rotate-2 {
+  transform: rotate(-2deg);
+  margin-top: -28px;
 }
 
 .list {
@@ -336,7 +367,7 @@ header {
 
 /* Chart */
 .don-chart{max-width:948px;margin:0 auto;
-  --dark:#400a1e; --pink:#f4c2f8; --red:#dd2232;
+  --dark:#490320; --pink:#F5C8FA; --red:#E9364B;
   --stagger:.18s; --ease:cubic-bezier(.22,1,.36,1);}
 .don-chart svg{display:block;width:100%;height:auto;overflow:visible}
 .don-chart text{font-family: "LorimerCondensed", sans-serif;text-transform:uppercase}
