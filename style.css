@@ -45,6 +45,7 @@
 
 body {
   font-family: 'Parkinsans', sans-serif;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -152,10 +153,8 @@ header {
   background-position: center;
 }
 
-@media (min-width: 768px) {
-  .color-block {
-    min-height: 360px;
-  }
+.color-block {
+  min-height: 360px;
 }
 
 .popular {
@@ -197,79 +196,6 @@ header {
     height: 100vh;
   }
 
-  #slideshow div {
-    height: 100vh;
-  }
-
-}
-
-@media (max-width: 768px) {
-  h1 {
-    font-size: 70px;
-    line-height: 56px;
-  }
-
-  h2 {
-    font-size: 40px;
-    line-height: 40px;
-  }
-
-  h3 {
-    font-size: 28px;
-  }
-
-  #slideshow div {
-    height: 600px;
-  }
-}
-
-/* https://stackoverflow.com/questions/66768323/vertical-text-sliding-one-phrase-after-another */
-
-.slides span {
-  opacity: 0;
-  margin-left: auto;
-  margin-right: auto;
-  position: absolute;
-}
-
-.slide-a {
-  animation: slideIn 12s forwards ease infinite;
-}
-.slide-b {
-  /* Start with 4 seconds delay */
-  animation: slideIn 12s 4s forwards ease infinite;
-}
-.slide-c {
-  /* Start with 8 seconds delay */
-  animation: slideIn 12s 8s forwards ease infinite;
-}
-
-
-@keyframes slideIn {
-  0% {
-      transform: translate3d(0, 50%, 0);
-      opacity: 0;
-  }
-  6.66% {
-      transform: translate3d(0, 0, 0);
-      opacity: 1;
-  }
-  26.66% {
-      transform: translate3d(0, 0, 0);
-      opacity: 1;
-  }
-  33.30% {
-      transform: translate3d(0, -50%, 0);
-      opacity: 0;
-  }
-  33.33% {
-      transform: translate3d(0, 50%, 0);
-      opacity: 0;
-  }
-  100% {
-      transform: translate3d(0, 50%, 0);
-      opacity: 0;
-  }
 }
 
 /* BANNER */
@@ -504,3 +430,40 @@ header {
 
 /* Délais progressifs pour un effet en cascade */
 .reveal:nth-child(2) { transition-delay: 1s; }
+
+
+/* FLIP CARD */
+/* The flip card container */
+.flip-card {
+  background-color: transparent;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  height: 100%;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the back side */
+.flip-card-back {
+  transform: rotateY(180deg);
+}
