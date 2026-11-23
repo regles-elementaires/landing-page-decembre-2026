@@ -479,6 +479,12 @@ header {
   backface-visibility: hidden;
 }
 
+@media (min-width: 1800px) {
+  .flip-card, .flip-card-inner, .flip-card-front, .flip-card-back {
+    min-height: 600px;
+  }
+}
+
 /* Style the back side */
 .flip-card-back {
   transform: rotateY(180deg);
