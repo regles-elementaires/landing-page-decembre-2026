@@ -6,12 +6,17 @@
     <meta name="description" content="Mes règles. Mes droits. Ensemble, faisons avancer la justice menstruelle.">
     <title>Justice menstruelle - Règles Élémentaires</title>
     <link href="./dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="./dist/css/swiffy-slider.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="./img/favicon.svg" />
     <link rel="icon" href="./img/favicon.ico" />
 
-    <!-- Matomo
+    <script type="module">
+      import { swiffyslider } from 'https://cdn.jsdelivr.net/npm/swiffy-slider@2.1.0/dist/js/swiffy-slider.js';
+      window.addEventListener('load', () => swiffyslider.init());
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@2.1.0/dist/css/swiffy-slider.css" rel="stylesheet">
+    
+    <!-- Matomo -->
     <script>
       var _paq = window._paq = window._paq || [];
       /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
@@ -20,44 +25,49 @@
       (function() {
         var u="//matomo.regleselementaires.com/";
         _paq.push(['setTrackerUrl', u+'matomo.php']);
-        _paq.push(['setSiteId', '4']);
+        _paq.push(['setSiteId', '11']);
         var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
         g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
       })();
     </script>
-    End Matomo Code -->
+    <!-- End Matomo Code -->
 
   </head>
   <body class="text-remaroon">
-
-    <header class="position-relative z-3 d-flex justify-content-center pb-5">
-      <div class="col-10 col-md-11 my-4 my-md-5 pb-5">
-        <div class="row">
-          <div class="col-6 col-md-2">
-            <a href="https://www.regleselementaires.com/">
-              <img src="./img/logo-re-blanc.svg" class="img-fluid" alt="lien vers le site vitrine de Règles Élémentaires">
-            </a>
-          </div>        
+    <header style="position: relative; width: 100%; aspect-ratio: 1440 / 836; min-height: 560px; overflow: hidden; background: #140404">
+      <div class="d-none d-md-block">
+        <div class="hdr-slide" style="animation-duration: 28s; animation-delay: -1.4s"><img src="./assets/25a11b8b12686881e3ac74bc1e9993ba.jpg" alt="Enora devant un rideau rouge : « Tu exagères, c’est dans ta tête. »" style="object-position: 0% 80%; animation-duration: 28s; animation-delay: -1.4s"></div>
+        <div class="hdr-slide" style="animation-duration: 28s; animation-delay: 2.6s"><img src="./assets/f063e41fdd66653d803b864fe751056d.jpg" alt="Camille devant un rideau rouge : « Ne parle pas de tes règles devant tout le monde. »" style="object-position: 0% 80%; animation-duration: 28s; animation-delay: 2.6s"></div>
+        <div class="hdr-slide" style="animation-duration: 28s; animation-delay: 6.6s"><img src="./assets/8fd2bc0914abece4641a9eb22cae7f33.jpg" alt="Angeline devant un rideau rouge : « C’est normal d’avoir mal pendant ses règles. »" style="object-position: 0% 80%; animation-duration: 28s; animation-delay: 6.6s"></div>
+        <div class="hdr-slide" style="animation-duration: 28s; animation-delay: 10.6s"><img src="./assets/a51a06150bb81ff11cdf8ac8f9566e37.jpg" alt="Mona devant un rideau rouge : « T’as qu’à utiliser du papier toilette ! »" style="object-position: 0% 80%; animation-duration: 28s; animation-delay: 10.6s"></div>
+        <div class="hdr-slide" style="animation-duration: 28s; animation-delay: 14.6s"><img src="./assets/8cccf099cc954f24cb4bd2bc39a167d9.jpg" alt="Nina devant un rideau rouge : « Tu comprendras quand tu seras plus grande… »" style="object-position: 0% 80%; animation-duration: 28s; animation-delay: 14.6s"></div>
+        <div class="hdr-slide" style="animation-duration: 28s; animation-delay: 18.6s"><img src="./assets/03dfb14ff881791828ed60eb837094bf.jpg" alt="Nadège devant un rideau rouge : « T’as tes règles ou quoi ? »" style="object-position: 0% 80%; animation-duration: 28s; animation-delay: 18.6s"></div>
+        <div class="hdr-slide" style="animation-duration: 28s; animation-delay: 22.6s"><img src="./assets/a16e496e866ca0c9c89303297632281b.jpg" alt="Emma devant un rideau rouge : « Tu te poses trop de questions. »" style="object-position: 0% 80%; animation-duration: 28s; animation-delay: 22.6s"></div>
+      </div> 
+      <div class="d-md-none">
+        <div class="hdr-slide" style="animation-duration: 28s; animation-delay: -1.4s"><img src="./assets/49cc67b8419c65716fd542eefd4363f4.jpg" alt="Enora devant un rideau rouge : « Tu exagères, c’est dans ta tête. »" style="object-position: 50% 60%; animation-duration: 28s; animation-delay: -1.4s"></div>
+        <div class="hdr-slide" style="animation-duration: 28s; animation-delay: 2.6s"><img src="./assets/0ac5849eba6f7be8110a0d2e6a61054b.jpg" alt="Camille devant un rideau rouge : « Ne parle pas de tes règles devant tout le monde. »" style="object-position: 50% 60%; animation-duration: 28s; animation-delay: 2.6s"></div>
+        <div class="hdr-slide" style="animation-duration: 28s; animation-delay: 6.6s"><img src="./assets/47fb20d9b7f38026113cd19e1897d79c.jpg" alt="Angeline devant un rideau rouge : « C’est normal d’avoir mal pendant ses règles. »" style="object-position: 50% 60%; animation-duration: 28s; animation-delay: 6.6s"></div>
+        <div class="hdr-slide" style="animation-duration: 28s; animation-delay: 10.6s"><img src="./assets/f764f3a8dcd513f90619db1aa315a6be.jpg" alt="Mona devant un rideau rouge : « T’as qu’à utiliser du papier toilette ! »" style="object-position: 50% 60%; animation-duration: 28s; animation-delay: 10.6s"></div>
+        <div class="hdr-slide" style="animation-duration: 28s; animation-delay: 14.6s"><img src="./assets/8888263ef844f042c7633587ab66a317.jpg" alt="Nina devant un rideau rouge : « Tu comprendras quand tu seras plus grande… »" style="object-position: 50% 60%; animation-duration: 28s; animation-delay: 14.6s"></div>
+        <div class="hdr-slide" style="animation-duration: 28s; animation-delay: 18.6s"><img src="./assets/678ad6861ee74c5069800f1af6a1ef62.jpg" alt="Nadège devant un rideau rouge : « T’as tes règles ou quoi ? »" style="object-position: 50% 60%; animation-duration: 28s; animation-delay: 18.6s"></div>
+        <div class="hdr-slide" style="animation-duration: 28s; animation-delay: 22.6s"><img src="./assets/bb0661ce5750ea887670ab1d802f6031.jpg" alt="Emma devant un rideau rouge : « Tu te poses trop de questions. »" style="object-position: 50% 60%; animation-duration: 28s; animation-delay: 22.6s"></div>
+      </div>           
+      <div class="position-relative col-6 col-md-2 mt-4 ms-4 px-4">
+        <a href="https://www.regleselementaires.com/">
+          <img src="./img/logo-re-blanc.svg" class="img-fluid" alt="lien vers le site vitrine de Règles Élémentaires">
+        </a>
+      </div>
+      <div class="position-relative text-center d-flex flex-column mt-5">
+        <h1 class="text-white">Mes règles.</h1>
+        <h1 class="text-white">Mes droits.</h1>
+        <h4 class="text-white mt-4">Ensemble, faisons avancer<br/>la justice menstruelle.</h4>
+        <div class="row d-flex justify-content-end mt-4 mb-md-5">
+          <div class="text-center">
+            <a class="small-maroon-shadow red-button button-liquid" href="https://don.regleselementaires.com/justicemenstruelle/~mon-don" target="_blank">Je fais un don</a>
+          </div>          
         </div>
-        <div class="row d-flex h-full mt-4 mt-md-0">
-          <div class="col-md-6 d-flex flex-column justify-content-center">
-            <h1 class="text-white reveal">Mes règles.</h1>
-            <h1 class="text-rered reveal">Mes droits.</h1>
-          </div>                 
-          <div class="col-md-6 d-flex flex-column justify-content-md-end pe-md-5">
-            <div class="row d-flex justify-content-md-end justify-content-center mt-3">
-              <div class="col-10 col-md-7">
-                <img class="img-fluid" src="./img/ensemble.png" alt="Ensemble, faisons avancer la justice menstruelle.">   
-              </div>                 
-            </div>
-            <div class="row d-flex justify-content-end mt-5 mb-md-5">
-              <div class="col-md-7 text-center">
-                <a class="small-maroon-shadow red-button button-liquid" href="https://regleselementaires.don-en-ligne.com/findannee2024/?lang=fr_FR&frequency=once&amount=16000" target="_blank">Je fais un don</a>
-              </div>          
-            </div>
-          </div>
-        </div>
-      </div>    
+      </div>
     </header>
 
     <div class="bg-white d-flex justify-content-center py-5">
@@ -101,11 +111,11 @@
             <div class="d-flex flex-column mx-1 small-maroon-shadow bg-white justify-content-between h-full">
               <div class="d-flex flex-column align-items-center p-4">
                 <img class="img-fluid" src="./img/protections.png" alt="" aria-hidden="true">
-                <h3 class="my-2">60€</h3>
-                <p class="text-center">2 femmes qui sortent durablement de la précarité menstruelle grâce à la mise à disposition de protections réutilisables</p>
-                <p class="fs-14 text-center fst-italic">Vous revient à <span class="fw-bold">20€</span> après réduction fiscale de <span class="fw-bold">66%</span></p>
+                <h3 class="my-2">50€</h3>
+                <p class="text-center">Vous contribuez à créer et diffuser des ressources pour comprendre son cycle, identifier une douleur qui mérite une consultation.</p>
+                <p class="fs-14 text-center fst-italic">Vous revient à <span class="fw-bold">17,50€</span> après réduction fiscale de <span class="fw-bold">66%</span></p>
                 <div class="text-center mt-2 mb-4">
-                  <a class="small-maroon-shadow red-button button-liquid" href="https://regleselementaires.don-en-ligne.com/findannee2024/?lang=fr_FR&frequency=once&amount=16000" target="_blank">Je fais un don</a>
+                  <a class="small-maroon-shadow red-button button-liquid" href="https://don.regleselementaires.com/justicemenstruelle/?frequency=once&amount=5000" target="_blank">Je fais un don</a>
                 </div> 
               </div>                
             </div>
@@ -114,11 +124,11 @@
             <div class="d-flex flex-column mx-1 small-maroon-shadow bg-white justify-content-between h-full">
               <div class="d-flex flex-column align-items-center p-4">
                 <img class="img-fluid" src="./img/ecole.png" alt="" aria-hidden="true">
-                <h3 class="my-2">100€</h3>
-                <p class="text-center">2 femmes qui sortent durablement de la précarité menstruelle grâce à la mise à disposition de protections réutilisables</p>
-                <p class="fs-14 text-center fst-italic">Vous revient à <span class="fw-bold">34€</span> après réduction fiscale de <span class="fw-bold">66%</span></p>
+                <h3 class="my-2">80€</h3>
+                <p class="text-center">Vous contribuez à former les professionnel·les qui accueillent les personnes en situation de précarité.</p>
+                <p class="fs-14 text-center fst-italic">Vous revient à <span class="fw-bold">29€</span> après réduction fiscale de <span class="fw-bold">66%</span></p>
                 <div class="text-center mt-2 mb-4">
-                  <a class="small-maroon-shadow red-button button-liquid" href="https://regleselementaires.don-en-ligne.com/findannee2024/?lang=fr_FR&frequency=once&amount=16000" target="_blank">Je fais un don</a>
+                  <a class="small-maroon-shadow red-button button-liquid" href="https://don.regleselementaires.com/justicemenstruelle/?frequency=once&amount=8000" target="_blank">Je fais un don</a>
                 </div> 
               </div>                
             </div>
@@ -127,11 +137,11 @@
             <div class="d-flex flex-column mx-1 small-maroon-shadow bg-reyellow justify-content-between h-full popular">
               <div class="d-flex flex-column align-items-center p-4">
                 <img class="img-fluid" src="./img/femme.png" alt="" aria-hidden="true">
-                <h3 class="my-2">150€</h3>
-                <p class="text-center">2 femmes qui sortent durablement de la précarité menstruelle grâce à la mise à disposition de protections réutilisables</p>
-                <p class="fs-14 text-center fst-italic">Vous revient à <span class="fw-bold">51€</span> après réduction fiscale de <span class="fw-bold">66%</span></p>
+                <h3 class="my-2">160€</h3>
+                <p class="text-center">Vous contribuez à l’accès aux protections de 30 personnes pendant un an.</p>
+                <p class="fs-14 text-center fst-italic">Vous revient à <span class="fw-bold">57€</span> après réduction fiscale de <span class="fw-bold">66%</span></p>
                 <div class="text-center mt-2 mb-4">
-                  <a class="small-maroon-shadow red-button button-liquid" href="https://regleselementaires.don-en-ligne.com/findannee2024/?lang=fr_FR&frequency=once&amount=16000" target="_blank">Je fais un don</a>
+                  <a class="small-maroon-shadow red-button button-liquid" href="https://don.regleselementaires.com/justicemenstruelle/?frequency=once&amount=16000" target="_blank">Je fais un don</a>
                 </div> 
               </div>                
             </div>
@@ -140,11 +150,11 @@
             <div class="d-flex flex-column mx-1 small-maroon-shadow bg-white justify-content-between h-full">
               <div class="d-flex flex-column align-items-center p-4">
                 <img class="img-fluid" src="./img/collecte.png" alt="" aria-hidden="true">
-                <h3 class="my-2">200€</h3>
-                <p class="text-center">2 femmes qui sortent durablement de la précarité menstruelle grâce à la mise à disposition de protections réutilisables</p>
-                <p class="fs-14 text-center fst-italic">Vous revient à <span class="fw-bold">68€</span> après réduction fiscale de <span class="fw-bold">66%</span></p>
+                <h3 class="my-2">300€</h3>
+                <p class="text-center">Vous soutenez le travail de plaidoyer pour une information claire sur la composition des produits et la santé menstruelle.</p>
+                <p class="fs-14 text-center fst-italic">Vous revient à <span class="fw-bold">107€</span> après réduction fiscale de <span class="fw-bold">66%</span></p>
                 <div class="text-center mt-2 mb-4">
-                  <a class="small-maroon-shadow red-button button-liquid" href="https://regleselementaires.don-en-ligne.com/findannee2024/?lang=fr_FR&frequency=once&amount=16000" target="_blank">Je fais un don</a>
+                  <a class="small-maroon-shadow red-button button-liquid" href="https://don.regleselementaires.com/justicemenstruelle/?frequency=once&amount=30000" target="_blank">Je fais un don</a>
                 </div> 
               </div>                
             </div>
@@ -152,17 +162,17 @@
         </div>
 
         <!-- SLIDER MOBILE -->
-        <div class="d-md-none mt-4 swiffy-slider slider-nav-touch slider-nav-noloop slider-nav-autohide slider-nav-dark slider-indicators-sm slider-indicators-round slider-indicators-highlight slider-indicators-outside slider-indicators-dark">
+        <div class="d-md-none mt-4 swiffy-slider slider-nav-dark slider-nav-visible slider-indicators-round slider-indicators-dark slider-indicators-outside slider-indicators-highlight slider-indicators-sm">
           <ul class="slider-container">
-            <li>
+            <li class="slide-visible">
               <div class="d-flex flex-column mx-1 small-maroon-shadow bg-white justify-content-between h-full">
                 <div class="d-flex flex-column align-items-center p-4">
                   <img class="img-fluid" src="./img/protections.png" alt="" aria-hidden="true">
-                  <h3 class="my-2">60€</h3>
-                  <p class="text-center">2 femmes qui sortent durablement de la précarité menstruelle grâce à la mise à disposition de protections réutilisables</p>
-                  <p class="fs-14 text-center fst-italic">Vous revient à <span class="fw-bold">20€</span> après réduction fiscale de <span class="fw-bold">66%</span></p>
+                  <h3 class="my-2">50€</h3>
+                  <p class="text-center">Vous contribuez à créer et diffuser des ressources pour comprendre son cycle, identifier une douleur qui mérite une consultation.</p>
+                  <p class="fs-14 text-center fst-italic">Vous revient à <span class="fw-bold">17,50€</span> après réduction fiscale de <span class="fw-bold">66%</span></p>
                   <div class="text-center mt-2 mb-4">
-                    <a class="small-maroon-shadow red-button button-liquid" href="https://regleselementaires.don-en-ligne.com/findannee2024/?lang=fr_FR&frequency=once&amount=16000" target="_blank">Je fais un don</a>
+                    <a class="small-maroon-shadow red-button button-liquid" href="https://don.regleselementaires.com/justicemenstruelle/?frequency=once&amount=5000" target="_blank">Je fais un don</a>
                   </div> 
                 </div>
               </div>              
@@ -171,11 +181,11 @@
               <div class="d-flex flex-column mx-1 small-maroon-shadow bg-white justify-content-between h-full">
                 <div class="d-flex flex-column align-items-center p-4">
                   <img class="img-fluid" src="./img/ecole.png" alt="" aria-hidden="true">
-                  <h3 class="my-2">100€</h3>
-                  <p class="text-center">2 femmes qui sortent durablement de la précarité menstruelle grâce à la mise à disposition de protections réutilisables</p>
-                  <p class="fs-14 text-center fst-italic">Vous revient à <span class="fw-bold">34€</span> après réduction fiscale de <span class="fw-bold">66%</span></p>
+                  <h3 class="my-2">80€</h3>
+                  <p class="text-center">Vous contribuez à former les professionnel·les qui accueillent les personnes en situation de précarité.</p>
+                  <p class="fs-14 text-center fst-italic">Vous revient à <span class="fw-bold">29€</span> après réduction fiscale de <span class="fw-bold">66%</span></p>
                   <div class="text-center mt-2 mb-4">
-                    <a class="small-maroon-shadow red-button button-liquid" href="https://regleselementaires.don-en-ligne.com/findannee2024/?lang=fr_FR&frequency=once&amount=16000" target="_blank">Je fais un don</a>
+                    <a class="small-maroon-shadow red-button button-liquid" href="https://don.regleselementaires.com/justicemenstruelle/?frequency=once&amount=8000" target="_blank">Je fais un don</a>
                   </div> 
                 </div>                
               </div>              
@@ -184,11 +194,11 @@
               <div class="d-flex flex-column mx-1 small-maroon-shadow bg-reyellow justify-content-between h-full">
                 <div class="d-flex flex-column align-items-center p-4">
                   <img class="img-fluid" src="./img/femme.png" alt="" aria-hidden="true">
-                  <h3 class="my-2">150€</h3>
-                  <p class="text-center">2 femmes qui sortent durablement de la précarité menstruelle grâce à la mise à disposition de protections réutilisables</p>
-                  <p class="fs-14 text-center fst-italic">Vous revient à <span class="fw-bold">51€</span> après réduction fiscale de <span class="fw-bold">66%</span></p>
+                  <h3 class="my-2">160€</h3>
+                  <p class="text-center">Vous contribuez à l’accès aux protections de 30 personnes pendant un an.</p>
+                  <p class="fs-14 text-center fst-italic">Vous revient à <span class="fw-bold">57€</span> après réduction fiscale de <span class="fw-bold">66%</span></p>
                   <div class="text-center mt-2 mb-4">
-                    <a class="small-maroon-shadow red-button button-liquid" href="https://regleselementaires.don-en-ligne.com/findannee2024/?lang=fr_FR&frequency=once&amount=16000" target="_blank">Je fais un don</a>
+                    <a class="small-maroon-shadow red-button button-liquid" href="https://don.regleselementaires.com/justicemenstruelle/?frequency=once&amount=16000" target="_blank">Je fais un don</a>
                   </div> 
                 </div>                
               </div>              
@@ -197,11 +207,11 @@
               <div class="d-flex flex-column mx-1 small-maroon-shadow bg-white justify-content-between h-full">
                 <div class="d-flex flex-column align-items-center p-4">
                   <img class="img-fluid" src="./img/collecte.png" alt="" aria-hidden="true">
-                  <h3 class="my-2">200€</h3>
-                  <p class="text-center">2 femmes qui sortent durablement de la précarité menstruelle grâce à la mise à disposition de protections réutilisables</p>
-                  <p class="fs-14 text-center fst-italic">Vous revient à <span class="fw-bold">68€</span> après réduction fiscale de <span class="fw-bold">66%</span></p>
+                  <h3 class="my-2">300€</h3>
+                  <p class="text-center">Vous soutenez le travail de plaidoyer pour une information claire sur la composition des produits et la santé menstruelle.</p>
+                  <p class="fs-14 text-center fst-italic">Vous revient à <span class="fw-bold">107€</span> après réduction fiscale de <span class="fw-bold">66%</span></p>
                   <div class="text-center mt-2 mb-4">
-                    <a class="small-maroon-shadow red-button button-liquid" href="https://regleselementaires.don-en-ligne.com/findannee2024/?lang=fr_FR&frequency=once&amount=16000" target="_blank">Je fais un don</a>
+                    <a class="small-maroon-shadow red-button button-liquid" href="https://don.regleselementaires.com/justicemenstruelle/?frequency=once&amount=30000" target="_blank">Je fais un don</a>
                   </div> 
                 </div>                
               </div>             
@@ -211,13 +221,14 @@
           <button type="button" class="slider-nav"></button>
           <button type="button" class="slider-nav slider-nav-next"></button>
     
-          <div class="slider-indicators">
-            <button class="active"></button>
-            <button></button>
-            <button></button>
-            <button></button>
-          </div>
+          <ul class="slider-indicators">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
         </div>
+
       </div>
     </div>
 
@@ -263,15 +274,65 @@
 
     <div class="bg-white d-flex justify-content-center py-5">
       <div class="col-10 mt-4 mt-md-5 pt-md-5 d-flex flex-wrap">
-          <div class="col-md-7 d-flex flex-column align-items-end">
-            <h2 class="w-full">Derrière chaque droit,<br/>il y a une <span class="text-rered">histoire</span></h2>
-            <p class="w-full mt-4 mt-md-5">Ne pas pouvoir acheter de protections. Ne pas savoir ce qu’elles contiennent.<br/>N’oser parler de ses règles à personne. Découvrir son cycle sans le comprendre.<br/>Demander de l’aide et voir sa douleur minimisée.</p>
-            <p class="w-full mt-2 mt-md-4 fw-semibold">La justice menstruelle, c’est permettre à chaque personne de vivre ses règles dans la dignité, sans subir d’inégalités ni de discriminations.</p>
-            <img class="d-none d-md-block img-fluid col-md-7 mt-4" src="./img/droit-arrow.svg" alt="" aria-hidden="true">
+        <div class="col-md-7 d-flex flex-column align-items-end">
+          <h2 class="w-full">Derrière chaque droit,<br/>il y a une <span class="text-rered">histoire</span></h2>
+          <p class="w-full mt-4 mt-md-5">Ne pas pouvoir acheter de protections. Ne pas savoir ce qu’elles contiennent.<br/>N’oser parler de ses règles à personne. Découvrir son cycle sans le comprendre.<br/>Demander de l’aide et voir sa douleur minimisée.</p>
+          <p class="w-full mt-2 mt-md-4 fw-semibold">La justice menstruelle, c’est permettre à chaque personne de vivre ses règles dans la dignité, sans subir d’inégalités ni de discriminations.</p>
+        </div>
+        <div class="col-md-5 d-flex align-items-end mt-4 mt-md-0 pb-md-5">
+          <div class="swiffy-slider slider-nav-dark slider-nav-outside slider-nav-autoplay slider-indicators-round slider-indicators-outside slider-indicators-highlight slider-indicators-sm" data-slider-nav-autoplay-interval="4000" style="--swiffy-slider-nav-dark: #490320;">
+            <ul class="slider-container mb-3">
+                <li class="slide-visible">
+                    <div id="slide1">
+                      <img class="img-fluid" src="./img/droit-1.png" alt="J'ai le droit d'être écoutée et soignée">
+                    </div>
+                </li>
+                <li class="">
+                    <div id="slide2">
+                      <img class="img-fluid" src="./img/droit-2.png" alt="J'ai le droit d'être écoutée et soignée">
+                    </div>
+                </li>
+                <li class="">
+                    <div id="slide3">
+                      <img class="img-fluid" src="./img/droit-3.png" alt="J'ai le droit de parler de mes règles librement.">
+                    </div>
+                </li>
+                <li class="">
+                    <div id="slide4">
+                      <img class="img-fluid" src="./img/droit-4.png" alt="J'ai le droit de parler de mes règles librement.">
+                    </div>
+                </li>
+                <li>
+                    <div id="slide5">
+                      <img class="img-fluid" src="./img/droit-5.png" alt="J'ai le droit d'avoir accès à des protections pérdiodiques.">
+                    </div>
+                </li>
+                <li>
+                    <div id="slide6">
+                      <img class="img-fluid" src="./img/droit-6.png" alt="J'ai le droit de comprendre mes règles et mon corps.">
+                    </div>
+                </li>
+                <li>
+                    <div id="slide7">
+                      <img class="img-fluid" src="./img/droit-7.png" alt="J'ai le droit de connaître la composition de mes protections périodiques.">
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="slider-indicators">
+                <li class="bg-remaroon active"></li>
+                <li class="bg-remaroon"></li>
+                <li class="bg-remaroon"></li>
+                <li class="bg-remaroon"></li>
+                <li class="bg-remaroon"></li>
+                <li class="bg-remaroon"></li>
+                <li class="bg-remaroon"></li>
+            </ul>
           </div>
-          <div class="col-md-5 d-flex align-items-end mt-4 mt-md-0 pb-md-5 ps-md-5">
-            <img class="img-fluid" src="./img/droit.png" alt="Votre don nous permet de poursuivre ce travail pour briser les tabous.">
-          </div>
+        </div>
+        <div class="w-full text-center mt-4 mt-md-3 mb-4">
+          <a class="small-maroon-shadow red-button button-liquid" href="https://don.regleselementaires.com/justicemenstruelle/~mon-don" target="_blank">Je fais un don</a>
+        </div> 
       </div>
     </div>
 
@@ -337,7 +398,7 @@
           </div>
         </div>
         <div class="text-center mt-5 mb-4 mb-md-5">
-          <a class="small-maroon-shadow red-button button-liquid" href="https://regleselementaires.don-en-ligne.com/findannee2024/?lang=fr_FR&frequency=once&amount=16000" target="_blank">Je fais un don</a>
+          <a class="small-maroon-shadow red-button button-liquid" href="https://don.regleselementaires.com/justicemenstruelle/~mon-don" target="_blank">Je fais un don</a>
         </div> 
       </div>
     </div>
@@ -392,7 +453,7 @@
           </div>
         </div>
         <div class="mt-5 mt-md-2 mb-4 d-flex justify-content-center w-full">
-          <a class="small-maroon-shadow red-button button-liquid" href="https://regleselementaires.don-en-ligne.com/findannee2024/?lang=fr_FR&frequency=once&amount=16000" target="_blank">Je fais un don</a>
+          <a class="small-maroon-shadow red-button button-liquid" href="https://don.regleselementaires.com/justicemenstruelle/~mon-don" target="_blank">Je fais un don</a>
         </div> 
       </div>
     </div>
@@ -435,7 +496,7 @@
         <p class="mt-5 col-md-6 text-center mx-auto">Derrière ces chiffres, il y a des personnes qui trouvent des protections, des jeunes qui comprennent mieux leur corps et des professionnel·les mieux préparé·es à les accompagner.</p>
         <p class="mt-4 col-md-6 text-center mx-auto fw-semibold">Votre soutien nous permet de poursuivre ce travail.</p>
         <div class="mt-5 mb-md-5 mb-4 d-flex justify-content-center w-full">
-          <a class="small-maroon-shadow red-button button-liquid" href="https://regleselementaires.don-en-ligne.com/findannee2024/?lang=fr_FR&frequency=once&amount=16000" target="_blank">Je fais un don</a>
+          <a class="small-maroon-shadow red-button button-liquid" href="https://don.regleselementaires.com/justicemenstruelle/~mon-don" target="_blank">Je fais un don</a>
         </div> 
       </div>
     </div>
@@ -485,7 +546,7 @@
         <div class="col-md-6">
           <h2>Vos règles.<br/>Vos droits.<br/><span class="text-rered">Votre soutien.</span></h2>
           <div class="mt-5 mb-md-5">
-            <a class="small-red-shadow maroon-button button-liquid" href="https://regleselementaires.don-en-ligne.com/findannee2024/?lang=fr_FR&frequency=once&amount=16000" target="_blank">Je fais un don</a>
+            <a class="small-red-shadow maroon-button button-liquid" href="https://don.regleselementaires.com/justicemenstruelle/~mon-don" target="_blank">Je fais un don</a>
           </div> 
         </div>
         <div class="col-md-6 d-flex align-items-end justify-content-center mb-md-5 mt-5 mt-md-0">
@@ -494,26 +555,8 @@
       </div>
     </div>    
 
-    <script src="./dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./dist/js/swiffy-slider.min.js"></script>      
+    <script src="./dist/js/bootstrap.bundle.min.js"></script>     
     <script src="./dist/js/chart-anim.js"></script>      
     <script src="./dist/js/phrases-anim.js"></script>      
-
-    <script>   
-      // TITLE ANIM
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            // Pour ré-animer à chaque passage :
-            // observer.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: 0.2  // déclenche quand 20 % de l'élément est visible
-      });
-
-      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    </script>
   </body>
 </html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Header mobile – diaporama en fondu</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0;background:#140404}
+a{color:#fff}a:hover{color:#ffd6d6}
+@keyframes hdrFade{0%{opacity:0}5%{opacity:1}14.29%{opacity:1}19.29%{opacity:0}100%{opacity:0}}
+@keyframes hdrZoom{0%{transform:scale(1)}19.29%{transform:scale(1.03)}100%{transform:scale(1.03)}}
+.hdr-slide{position:absolute;inset:0;opacity:0;animation-name:hdrFade;animation-timing-function:ease-in-out;animation-iteration-count:infinite;animation-fill-mode:both;will-change:opacity}
+.hdr-slide img{display:block;width:100%;height:100%;object-fit:cover;animation-name:hdrZoom;animation-timing-function:linear;animation-iteration-count:infinite;animation-fill-mode:both;will-change:transform}
+@media (prefers-reduced-motion: reduce){.hdr-slide,.hdr-slide img{animation:none}.hdr-slide:first-child{opacity:1}}
+</style>
+</helmet>
+<header aria-label="Portraits" style="position: relative; width: 100%; aspect-ratio: 390 / 693; overflow: hidden; background: #140404">
+<div class="hdr-slide" style="animation-duration: {{total}}s; animation-delay: {{d0}}s"><img src="./assets/49cc67b8419c65716fd542eefd4363f4.jpg" alt="Enora devant un rideau rouge : « Tu exagères, c’est dans ta tête. »" style="object-position: 50% 60%; animation-duration: {{total}}s; animation-delay: {{d0}}s"></div>
+<div class="hdr-slide" style="animation-duration: {{total}}s; animation-delay: {{d1}}s"><img src="./assets/0ac5849eba6f7be8110a0d2e6a61054b.jpg" alt="Camille devant un rideau rouge : « Ne parle pas de tes règles devant tout le monde. »" style="object-position: 50% 60%; animation-duration: {{total}}s; animation-delay: {{d1}}s"></div>
+<div class="hdr-slide" style="animation-duration: {{total}}s; animation-delay: {{d2}}s"><img src="./assets/47fb20d9b7f38026113cd19e1897d79c.jpg" alt="Angeline devant un rideau rouge : « C’est normal d’avoir mal pendant ses règles. »" style="object-position: 50% 60%; animation-duration: {{total}}s; animation-delay: {{d2}}s"></div>
+<div class="hdr-slide" style="animation-duration: {{total}}s; animation-delay: {{d3}}s"><img src="./assets/f764f3a8dcd513f90619db1aa315a6be.jpg" alt="Mona devant un rideau rouge : « T’as qu’à utiliser du papier toilette ! »" style="object-position: 50% 60%; animation-duration: {{total}}s; animation-delay: {{d3}}s"></div>
+<div class="hdr-slide" style="animation-duration: {{total}}s; animation-delay: {{d4}}s"><img src="./assets/8888263ef844f042c7633587ab66a317.jpg" alt="Nina devant un rideau rouge : « Tu comprendras quand tu seras plus grande… »" style="object-position: 50% 60%; animation-duration: {{total}}s; animation-delay: {{d4}}s"></div>
+<div class="hdr-slide" style="animation-duration: {{total}}s; animation-delay: {{d5}}s"><img src="./assets/678ad6861ee74c5069800f1af6a1ef62.jpg" alt="Nadège devant un rideau rouge : « T’as tes règles ou quoi ? »" style="object-position: 50% 60%; animation-duration: {{total}}s; animation-delay: {{d5}}s"></div>
+<div class="hdr-slide" style="animation-duration: {{total}}s; animation-delay: {{d6}}s"><img src="./assets/bb0661ce5750ea887670ab1d802f6031.jpg" alt="Emma devant un rideau rouge : « Tu te poses trop de questions. »" style="object-position: 50% 60%; animation-duration: {{total}}s; animation-delay: {{d6}}s"></div>
+</header>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"secondesParPhoto":{"editor":"range","min":4,"max":14,"step":0.5,"unit":"s","default":7},"$preview":{"width":390,"height":693}}'>
+class Component extends DCLogic {
+renderVals() {
+const s = Number(this.props.secondesParPhoto ?? 7) || 7;
+const n = 7;
+const fade = s * 0.35;
+const v = { total: (s * n).toFixed(2) };
+for (let i = 0; i < n; i++) v['d' + i] = (i * s - fade).toFixed(2);
+return v;
+}
+}
+</script>
+</body>
+</html>
